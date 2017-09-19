@@ -7,24 +7,29 @@ namespace conditional_statements
         static void Main(string[] args)
         {
             int number;
-            Console.WriteLine("Please, enter a number; ");
-            number = int.Parse(Console.ReadLine());
             {
-                if (number < 0)
-                {
-                    //Console.WriteLine("The number {0} {1} is negative", number, userInput );
-                    //Console.WriteLine("The number " + number + " is negative", number);
-                    Console.WriteLine($"The number {number} is negative");
+                Console.WriteLine("Please, enter a number:");
+            }
+            bool check;
+            do
+            {
+                Console.WriteLine("Please, enter a number:");
+                check = int.TryParse(Console.ReadLine(), out number);
+            }
+            while (!check);
+            if (number < 0)
+                {   
+                    Console.WriteLine($"The number {number} is negative.");
                 }
-                else if (number > 0)
+            else if (number > 0)
                 {
-                    Console.WriteLine($"The number {number} is positive");
-                    Console.ReadLine();
+                    Console.WriteLine($"The number {number} is positive.");
                 }
-                else
+            else
                 {
-                    Console.WriteLine($"The number {number} is neutral");
-                    Console.ReadLine();
+                    Console.WriteLine($"The number {number} is neutral.");
+                }
+            Console.ReadLine();
         }
     }
 }
