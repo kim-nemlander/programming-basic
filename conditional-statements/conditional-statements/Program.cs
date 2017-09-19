@@ -7,9 +7,6 @@ namespace conditional_statements
         static void Main(string[] args)
         {
             int number;
-            {
-                Console.WriteLine("Please, enter a number:");
-            }
             bool check;
             do
             {
