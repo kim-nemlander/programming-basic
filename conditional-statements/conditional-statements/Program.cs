@@ -14,19 +14,20 @@ namespace conditional_statements
                 check = int.TryParse(Console.ReadLine(), out number);
             }
             while (!check);
+
             if (number < 0)
-                {   
+                
                     Console.WriteLine($"The number {number} is negative.");
-                }
+                
             else if (number > 0)
-                {
+                
                     Console.WriteLine($"The number {number} is positive.");
-                }
+                
             else
-                {
+                
                     Console.WriteLine($"The number {number} is neutral.");
-                }
-            Console.ReadLine();
+                
+                    Console.ReadLine();
         }
     }
 }
