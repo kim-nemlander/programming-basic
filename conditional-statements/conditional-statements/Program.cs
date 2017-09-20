@@ -7,11 +7,15 @@ namespace conditional_statements
         static void Main(string[] args)
         {
             int number;
-            bool check;
+            bool check=true ;
             do
             {
-                Console.WriteLine("Please, enter a number:");
+                if(check)
+                    Console.WriteLine("Please, enter a number:");
+                else
+                    Console.WriteLine("That's not a number, please enter a number:");
                 check = int.TryParse(Console.ReadLine(), out number);
+
             }
             while (!check);
 
