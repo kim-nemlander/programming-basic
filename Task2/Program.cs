@@ -6,34 +6,28 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            string userInput;
             int number;
-            Console.WriteLine("Please, enter a number; ");
-            userInput = Console.ReadLine();
-            bool isUserInputTrue = int.TryParse(userInput, out number);
-
-            if (isUserInputTrue == true)
+            bool check = true;
+            do
             {
-                if (number % 2 == 0)
-                {
-                    //Console.WriteLine("The number {0} {1} is negative", number, userInput );
-                    //Console.WriteLine("The number " + number + " is negative", number);
-                    Console.WriteLine($"The number {number} -> {userInput} is an even number");
-                }
-                
+                if (check)
+                    
+                    Console.WriteLine("Please, enter a number:");
                 else
-                {
-                    Console.WriteLine($"The number {number} -> {userInput} is an odd number");
-                }
-
+                    Console.WriteLine("That's not a number, please enter a number:");
+                check = int.TryParse(Console.ReadLine(), out number);
             }
+            while (!check);
+
+            if (number % 2 == 0)
+                
+                Console.WriteLine($"The number {number} is an even number");
+                
             else
-            {
-                Console.WriteLine($"You typed not number {userInput}");
-            }
+                
+                Console.WriteLine($"The number {number} is an odd number");
 
-            Console.ReadKey();
-
+                Console.ReadKey();
         }
     }
 }
